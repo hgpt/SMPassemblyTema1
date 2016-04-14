@@ -1,7 +1,9 @@
 ; Acesta este un program scris in assembly care face urmatoarele:
     ;1. Deseneaza un cub 3D
     ;2. Citeste input-ul primit de la mouse pentru a desena orice
-    ;3. Reda sunete de tip beep
+    ;3. Reda sunete de tip beep   
+  
+  ;pentru navigarea prin meniu se folosesc tastele 1,2,3 si ESC pentru a ne intoarce la meniul principal  
     
 ;Generarea laturilor cubului s-a facut dupa urmatoarea legenda:
 
@@ -20,7 +22,7 @@ org 100h
 
 jmp print_menu
 
- ;Variables  
+ ;Variabile  
  
  ;variabile necesare meniului
  
@@ -33,10 +35,12 @@ jmp print_menu
    
  ;variabile necesare desenarii cubului 3D
     
-    w equ 120 ; dimensiune dreptunghi
-    h equ 120 
-    color equ 50
-    coord_y equ 190 
+    w equ 100 ; dimensiuna cubului
+    h equ 100 
+    
+    color equ 50 ; culoarea cubului
+    
+    coord_y equ 190  ; coordonatele de la care se incepe desenarea cubului
     coord_x equ 220
   
  ;variabile necesare pentru a desena cu ajutorul mouse-ului  
@@ -107,13 +111,14 @@ read_esc:
 ; prima optiune a meniului
 option1:
     mov ah, 0
-    mov al, 12h ; trecere in mod grafic 320x200
+    mov al, 12h ; trecere in mod grafic 720x400
     int 10h
            
     ; afisare muchie fata superioara (muchia 1)
     mov cx, coord_x ; coloana
     mov dx, coord_y ; rand
-    mov al, color ; alb 
+    mov al, color ; verde in cazul nostru 
+    
     u1: mov ah, 0ch ; afisare pixel
         int 10h
         inc cx
@@ -253,8 +258,8 @@ option2:
         mov ax, 0 ; initializare mouse
         int 33h
         cmp ax, 0
-        mov ax, 1 ; afisare cursor mouse - optional
-        int 33h
+        ;mov ax, 1 ; afisare cursor mouse - optional
+        ;int 33h
     check_mouse_button:
         mov ax, 3
         int 33h ; preluare pozitie si status butoane
