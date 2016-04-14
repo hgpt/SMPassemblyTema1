@@ -8,8 +8,8 @@ org 100h
   
 jmp code
 
-w equ 100 ; dimensiune dreptunghi
-h equ 100 
+w equ 20 ; dimensiune dreptunghi
+h equ 20 
 color equ 50
 coord_y equ 270 
 coord_x equ 250     
@@ -149,7 +149,82 @@ u12: mov ah, 0ch
     cmp cx, coord_x+w/2
     cmp dx, coord_y+h/2
     jnz u12               
-                    
+
+;-----------------------desen cub incheiat--------------
+
+jmp start
+oldX dw -1
+oldY dw 0 
+
+start:
+int 10h
+mov ax, 0 ; ini?ializare mouse
+int 33h
+cmp ax, 0
+;mov ax, 1 ; afi?are cursor mouse ? op?ional
+;int 33h
+check_mouse_button:
+mov ax, 3
+int 33h ; preluare pozi?ie ?i status butoane
+shr cx, 1 ; x/2 ? în modul grafic este dublat? coordonata x
+cmp bx, 1
+jne xor_cursor:
+mov al, 1010b ; culoare punct
+jmp draw_pixel
+xor_cursor:
+cmp oldX, -1
+je not_required
+push cx
+push dx
+mov cx, oldX
+mov dx, oldY
+mov ah, 0dh
+int 10h
+xor al, 1111b
+mov ah, 0ch
+int 10h
+pop dx
+pop cx
+not_required:
+mov ah, 0dh
+int 10h
+xor al, 1111b
+mov oldX, cx
+mov oldY, dx
+draw_pixel:
+mov ah, 0ch
+int 10h
+check_esc_key:
+mov dl, 255
+mov ah, 6
+int 21h
+cmp al, 27 ; esc?
+jne check_mouse_button
+stop:
+;mov ax, 2 ; ascunde cursor mouse ? op?ional
+;int 33h
+mov ax, 3 ; înapoi în mod text 80x25
+int 10h
+mov ah, 1
+mov ch, 0
+mov cl, 8
+int 10h
+mov dx, offset msg
+mov ah, 9
+int 21h
+mov ah, 0
+int 16h
+hlt
+msg db " press any key.... $"
+
+                 
+ret
+
+
+
+
+
+   
 ; asteptare apasare tasta
 mov ah,00
 int 16h
