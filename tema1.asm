@@ -8,11 +8,11 @@ org 100h
   
 jmp code
 
-w equ 40 ; dimensiune dreptunghi
-h equ 40 
+w equ 100 ; dimensiune dreptunghi
+h equ 100 
 color equ 50
-coord_y equ 250 
-coord_x equ 200     
+coord_y equ 270 
+coord_x equ 250     
 
 code: mov ah, 0
       mov al, 12h ; trecere in mod grafic 320x200
@@ -94,7 +94,62 @@ u7: mov ah, 0ch
     cmp cx, coord_x+w/2+w
     jnz u7      
 
-    
+
+; afisare muchie 8
+mov cx, coord_x+w
+mov dx, coord_y+h
+mov al, color   
+u8: mov ah, 0ch
+    int 10h
+    inc cx 
+    dec dx
+    cmp cx, coord_x+w/2
+    cmp dx, coord_y+h/2
+    jnz u8   
+
+; afisare muchie 9
+mov cx, coord_x+w+w/2
+mov dx, coord_y-h/2
+mov al, color   
+u9: mov ah, 0ch
+    int 10h
+    inc dx
+    cmp dx, coord_y+h-h/2
+    jnz u9 
+                
+; afisare muchie 10
+mov cx, coord_x+w/2
+mov dx, coord_y-h/2
+mov al, color   
+u10: mov ah, 0ch
+    int 10h
+    add dx,02h
+    cmp dx, coord_y+h-h/2
+    jnz u10
+
+; afisare muchie 11
+mov cx, coord_x+w/2
+mov dx, coord_y+h/2
+mov al, color     
+u11: mov ah, 0ch
+    int 10h
+    inc cx
+    cmp cx, coord_x+w+w/2
+    jnz u11
+
+
+; afisare muchie 12
+mov cx, coord_x
+mov dx, coord_y+h
+mov al, color   
+u12: mov ah, 0ch
+    int 10h
+    inc cx 
+    dec dx
+    cmp cx, coord_x+w/2
+    cmp dx, coord_y+h/2
+    jnz u12               
+                    
 ; asteptare apasare tasta
 mov ah,00
 int 16h
