@@ -1,0 +1,119 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf340
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;\red38\green38\blue38;\red255\green255\blue255;\red11\green91\blue151;
+}
+\paperw11900\paperh16840\margl1440\margr1440\vieww19460\viewh16400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Acest mic proiect in assembly are ca scop o posibila rezolvare a temei de laborator corespunzatoare cursului de Sisteme cu Microprocesoare (SMP) sustinut de Radu Pietraru in cadrul Facultatii de Automatica si Calculatoare, UPB.\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97<Cerinte tema>\'97\'97\'97\'97\'97\'97\'97\'97 \
+\
+\pard\pardeftab720\sl400\partightenfactor0
+
+\f1\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Enun\uc0\u539 
+\b0 \
+\
+Scrie\uc0\u539 i un program \'een limbaj de asamblare, la liber\u259  alegere.\
+\
+Temele se vor \'eenc\uc0\u259 rca pe Moodle \u537 i se vor prezenta la {\field{\*\fldinst{HYPERLINK "http://acs.curs.pub.ro/2015/mod/folder/view.php?id=2801"}}{\fldrslt \cf4 \strokec4 laborator}} \'een s\uc0\u259 pt\u259 m\'e2na a 8-a.\
+\
+
+\b Criterii de notare
+\b0 \
+\
+\pard\pardeftab720\sl400\partightenfactor0
+
+\i \cf2 Mediul de programare/execu\uc0\u539 ie:
+\i0 \
+- program x86 pe 16 bi\uc0\u539 i \'een EMU8086: 1p\
+- SAU program x86 pe 32 bi\uc0\u539 i (orice mediu de programare, de exemplu masm32, nasm,\
+gcc/gas, flat, jwasm, pe orice sistem de operare): 2p\
+- SAU program x86-64 (orice mediu de programare, orice sistem de operare): 3p\
+- SAU program x86 pe 16 bi\uc0\u539 i cu \'eenc\u259 rcare din bootloader: 2p\
+- SAU program x86 pe 32/64 bi\uc0\u539 i cu \'eenc\u259 rcare din bootloader: 3p\
+\
+
+\i Tastatura:
+\i0 \
+- pentru introducere valori (scanf, textbox): 1p\
+- SAU \'een regim interactiv (joc, navigare meniu, taste de tip shortcut): 2p\
+\
+
+\i Grafic\uc0\u259 :
+\i0 \
+- grafic\uc0\u259  simpl\u259  2D: 2p\
+- SAU grafic\uc0\u259  simpl\u259  3D: 3p\
+\
+
+\i Alte func\uc0\u539 ii:
+\i0 \
+- anima\uc0\u539 ie: 1p\
+- utilizare mouse sau touchscreen: 1p\
+- sunet: 1p\
+- calcule matematice / logica complexa: 1p (2p pentru calcule de complexitate ridicat\uc0\u259 )\
+- acces disc/re\uc0\u539 ea/usb/bluetooth: 1p pentru fiecare periferic\
+- utilizare set instruc\uc0\u539 iuni extinse: MMX, SSE*, AVX, etc: 1p\
+- utilizare instruc\uc0\u539 iuni speciale (CPUID, RDTSC, RDPMC, etc): 1p\
+- optimizare cod (cu benchmark \uc0\u537 i compara\u539 ie cu versiunea in C): 2p\
+- lista este deschis\uc0\u259  (pute\u539 i veni cu propuneri)\
+\
+
+\i Nefunc\uc0\u539 ionale:
+\i0 \
+- comentarii/indentare: 1p (2p pentru programe foarte bine documentate)\
+- utilizare sistem de control al versiunilor (exemplu: mercurial, git): 1p\
+- aducerea temei mai devreme de s\uc0\u259 pt\u259 m\'e2na a 8-a: 1p\
+- originalitate: 1p (teme cu adevarat originale, nu doar necopiate)\
+\
+
+\i Penaliz\uc0\u259 ri:
+\i0 \
+- \'eent\'e2rziere: 2p / s\uc0\u259 pt\u259 m\'e2n\u259 \
+- teme copiate (de la alt student sau din alte surse): se \'eemparte nota la num\uc0\u259 rul de copii identificate\
+\
+Se poate lucra \'een echip\uc0\u259 ; \'een acest caz, nota se \'eemparte la num\u259 rul de membri ai echipei (cu alte cuvinte, va trebui s\u259  alege\u539 i un o tem\u259  mai complex\u259  care s\u259  v\u259  aduc\u259  un punctaj mai mare - aproape de 20).\
+\
+
+\i Nota maxim\uc0\u259 :
+\i0 \
+- 12 daca nu se specific\uc0\u259  altfel\
+- 10 / numarul de teme aproape identice (doar pentru teme copiate, nu \uc0\u537 i pentru lucrul \'een echip\u259 )\
+- 3 daca programul nu func\uc0\u539 ioneaz\u259 \
+- 5 daca programul pare s\uc0\u259  func\u539 ioneze, dar este inutilizabil din cauza erorilor\
+\
+Nota de la {\field{\*\fldinst{HYPERLINK "http://acs.curs.pub.ro/2015/mod/folder/view.php?id=2801"}}{\fldrslt \cf4 \strokec4 laborator}} se calculeaz\uc0\u259  astfel: 75% tema, 25% prezen\u539 a \'een primele 7\
+s\uc0\u259 pt\u259 m\'e2ni.\
+\
+\pard\pardeftab720\sl400\partightenfactor0
+
+\b \cf2 Exemple\cb1 \
+\
+\pard\pardeftab720\sl400\partightenfactor0
+
+\b0 \cf2 \cb3 - un student care se mul\uc0\u539 ume\u537 te cu nota 5 \u537 i are 5 prezen\u539 e \'een primele 7 s\u259 pt\u259 m\'e2ni \'ee\u537 i poate alege s\u259  scrie un program care s\u259  deseneze o c\u259 su\u539 \u259  in EMU8086, ob\u539 in\'e2nd 4 puncte (1p EMU8086 + 2p grafic\u259  + 1p comentarii/indentare). Nota la {\field{\*\fldinst{HYPERLINK "http://acs.curs.pub.ro/2015/mod/folder/view.php?id=2801"}}{\fldrslt \cf4 \strokec4 laborator}} va fi (5*10/7 + 4*3)/4 = 4.79 => 5.\
+\
+- un student care dore\uc0\u537 te nota 10 \u537 i are 5 prezen\u539 e \'een primele 7 s\u259 pt\u259 m\'e2ni \'ee\u537 i poate alege o tem\u259  pe care s\u259  ob\u539 in\u259  11 puncte. \'cen acest caz, nota va fi: (5*10/7 + 11*3)/4 = 10.\
+\
+- un program care deseneaz\uc0\u259  graficul unei func\u539 ii poate primi:\
+\'a0 1p (EMU8086) + 2p (grafica) + 1p (calcule matematice) + 1p (comentarii/indentare) = 5\
+- acela\uc0\u537 i program poate primi nota 6 dac\u259  func\u539 ia are parametri introdu\u537 i de la tastatur\u259  (+1p) sau dac\u259  poate fi selectat\u259  dintr-un meniu simplu de tip text (+1p)\
+- acela\uc0\u537 i program poate primi nota 7 dac\u259  func\u539 ia poate fi selectat\u259  dintr-un meniu navigabil cu tastele s\u259 ge\u539 i (+2p)\
+- acela\uc0\u537 i program poate primi nota 10 dac\u259  este implementat sub Windows/Mac/Linux pe\
+64 bi\uc0\u539 i (+2p), func\u539 ia poate fi selectat\u259  din meniu (+2p) \u537 i se poate face zoom cu\
+mouse-ul (+1p).\
+\
+- un joc \'een mod text de tip X \uc0\u537 i 0 poate primi:\
+\'a0 1p (EMU8086) + 1p (logic\uc0\u259  joc) + 2p (navigare cu s\u259 ge\u539 i) + 1p (comentarii/indentare) = 5\
+\
+- un joc \'een mod grafic de tip Space Invaders poate primi:\
+\'a0 1p (EMU8086) + 2p (grafic\uc0\u259  2D) + 1p (anima\u539 ie) + 1p (logic\u259  joc) + 2p (taste joc) + 1p (comentarii/indentare) = 8\
+- acela\uc0\u537 i joc, dar \'een mod text, poate primi nota 6 (se pierde punctajul pentru grafic\u259 , dar se pastreaz\u259  cel pentru anima\u539 ie)\
+- acela\uc0\u537 i joc poate primi nota 10 daca este implementat pe Win32 (+1p) \u537 i se poate juca \u537 i cu mouse-ul, pe l\'e2ng\u259  tastatur\u259  (+1p)\
+\
+Succes!\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97</Cerinte tema>\'97\'97\'97\'97\'97\'97\'97\'97 }
